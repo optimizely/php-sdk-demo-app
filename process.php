@@ -44,22 +44,24 @@
     if(isset($user_id)){
       $client = initOpti();
 
-    $variation = $client->activate('ITEM_SORT', $user_id);
+      $variation = $client->activate('ITEM_SORT', $user_id);
     
-    if ($variation == 'PRICE') {
-      echo "<h3>PRICE</h3>";
-      foreach ($data as $key => $row) {
-        $num = str_replace('$', '', $row[3]);
-        $num = (int)$num;
-        $price[$key] = $num;
-      }
+      if ($variation == 'PRICE') {
+        echo "<h3>PRICE</h3>";
+        foreach ($data as $key => $row) {
+          $num = str_replace('$', '', $row[3]);
+          $num = (int)$num;
+          $price[$key] = $num;
+        }
+      
         array_multisort($price, SORT_ASC, $data);
       
       } elseif ($variation == 'CATEGORY') {  
           echo "<h3>CATEGORY</h3>";
           foreach ($data as $key => $row) {
             $category[$key] = $row[2];
-          }
+           }
+        
           array_multisort($category, SORT_ASC, $data);
       } 
       return array($data, $variation);
