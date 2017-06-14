@@ -4,8 +4,8 @@
 // Copyright 2016 Optimizely. Licensed under the Apache License
 // View the documentation: http://bit.ly/2rfsbxt
 
-	require_once 'vendor/autoload.php';
-	use Optimizely\Optimizely;
+  require_once 'vendor/autoload.php';
+  use Optimizely\Optimizely;
   use Optimizely\Logger\DefaultLogger;
 
   $PROJECT_ID = '<project_id>';
@@ -16,7 +16,7 @@
   }
 
 
-	function initOpti(){
+  function initOpti(){
     $project_id = $GLOBALS['PROJECT_ID'];
     $url = "https://cdn.optimizely.com/json/$project_id.json";
     $datafile = file_get_contents($url);
@@ -24,7 +24,7 @@
     $optimizelyClient = new Optimizely($datafile);
 
     return $optimizelyClient;
-	}
+  }
 
   function track($user_id){
     $client = initOpti();
@@ -34,42 +34,40 @@
   }
 
 
-	function getItems($user_id = NULL){
-	  $csvFile = file('items.csv');
-	  $data = [];
-	  foreach ($csvFile as $line) {
+  function getItems($user_id = NULL){
+    $csvFile = file('items.csv');
+    $data = [];
+    foreach ($csvFile as $line) {
       $data[] = str_getcsv($line);
-		}
+    }
 
-		if(isset($user_id)){
+    if(isset($user_id)){
       $client = initOpti();
 
-      $variation = $client->activate('ITEM_SORT', $user_id);
-      if ($variation == 'PRICE') {
-        
-        echo "<h3>PRICE</h3>";
-        foreach ($data as $key => $row) {
-          $num = str_replace('$', '', $row[3]);
-          $num = (int)$num;
-          $price[$key] = $num;
-        }
+    $variation = $client->activate('ITEM_SORT', $user_id);
+    
+    if ($variation == 'PRICE') {
+      echo "<h3>PRICE</h3>";
+      foreach ($data as $key => $row) {
+        $num = str_replace('$', '', $row[3]);
+        $num = (int)$num;
+        $price[$key] = $num;
+      }
         array_multisort($price, SORT_ASC, $data);
       
-      } elseif ($variation == 'CATEGORY') {
-          
+      } elseif ($variation == 'CATEGORY') {  
           echo "<h3>CATEGORY</h3>";
           foreach ($data as $key => $row) {
             $category[$key] = $row[2];
           }
           array_multisort($category, SORT_ASC, $data);
       } 
-			return array($data, $variation);
+      return array($data, $variation);
 
-		} else {
-			
+    } else {		
       return array($data, NULL);
-		}
-	}
+    }
+  }
 
   function displayItems($items){
     
