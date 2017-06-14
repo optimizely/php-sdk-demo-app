@@ -1,5 +1,9 @@
 <?php 
 
+// PHP SDK Demo App
+// Copyright 2016 Optimizely. Licensed under the Apache License
+// View the documentation: http://bit.ly/2rfsbxt
+
 	require_once 'vendor/autoload.php';
 	use Optimizely\Optimizely;
   use Optimizely\Logger\DefaultLogger;

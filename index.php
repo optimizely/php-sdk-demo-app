@@ -1,5 +1,9 @@
 <?php
 
+// PHP SDK Demo App
+// Copyright 2016 Optimizely. Licensed under the Apache License
+// View the documentation: http://bit.ly/2rfsbxt
+
 include ('process.php');
 
 if(isset($_POST['user_id'])){
