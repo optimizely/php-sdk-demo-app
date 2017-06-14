@@ -1,17 +1,17 @@
 # PHP SDK Demo App
 
-This demo uses the PHP SDK, a part of Optimizely's Full Stack solution.
+This demo uses the PHP SDK, a part of Optimizely's Full Stack solution. Check out the [live demo](http://ec2-52-36-13-152.us-west-2.compute.amazonaws.com/).
 
 
 ## Optimizely Full Stack Overview
 
-Optimizely Full Stack allows developers to run experiments anywhere in their code! The Python SDK provides the core components to run a full stack experiment with Optimizely. It handles aspects like bucketing, which is used to designate users to a specific experiment variation, conversion tracking, and reporting via Optimizely’s [Stats Engine](https://www.optimizely.com/statistics/).  
+Optimizely Full Stack allows developers to run experiments anywhere in their code! The PHP SDK provides the core components to run a full stack experiment with Optimizely. It handles aspects like bucketing, which is used to designate users to a specific experiment variation, conversion tracking, and reporting via Optimizely’s [Stats Engine](https://www.optimizely.com/statistics/).  
 
-* View the [Python Getting Started Guide](http://developers.optimizely.com/server/getting-started/index.html?language=php)
+* View the [PHP Getting Started Guide](http://developers.optimizely.com/server/getting-started/index.html?language=php)
 
 * View the reference [documentation](http://developers.optimizely.com/server/reference/index.html?language=php).
 
-* Latest [Python SDK](https://github.com/optimizely/php-sdk)
+* Latest [PHP SDK](https://github.com/optimizely/php-sdk)
 
 ## Demo App
 
