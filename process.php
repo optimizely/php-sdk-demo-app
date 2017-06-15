@@ -1,7 +1,7 @@
 <?php 
 
 // PHP SDK Demo App
-// Copyright 2016 Optimizely. Licensed under the Apache License
+// Copyright 2017 Optimizely. Licensed under the Apache License
 // View the documentation: http://bit.ly/2rfsbxt
 
   require_once 'vendor/autoload.php';
