@@ -110,10 +110,6 @@ Connect the required dependency for the application using `include`.
 ```php
 <?php
 
-// PHP SDK Demo App
-// Copyright 2017 Optimizely. Licensed under the Apache License
-// View the documentation: http://bit.ly/2rfsbxt
-
 include ('process.php');
 
 if(isset($_POST['user_id'])){
@@ -163,10 +159,6 @@ Connect the required dependencies for the application, including the Optimizely 
 
 ```php
 <?php 
-
-// PHP SDK Demo App
-// Copyright 2017 Optimizely. Licensed under the Apache License
-// View the documentation: http://bit.ly/2rfsbxt
 
   require_once 'vendor/autoload.php';
   use Optimizely\Optimizely;
