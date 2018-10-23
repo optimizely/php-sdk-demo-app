@@ -135,7 +135,8 @@ Create the layout for the catalog and initialize the application using `getItems
   <body>
     ...     
           <form action="index.php" method="post">
-              <b>Simulate a visitor:</b> <input placeholder="Joe" type="text" name="user_id" value="<?php $user_id ?>">
+              <b>Simulate a visitor:</b> 
+              <input placeholder="Joe" type="text" name="user_id" value="<?php $user_id ?>">
               <input type="submit" value="Shop">
           </form>
           ...
