@@ -1,6 +1,6 @@
 # Optimizely PHP Tutorial
 
-This tutorial enables you to quickly get started in your development efforts to create a PHP web application with the Optimizely X PHP SDK. A [live demo](http://ec2-52-36-13-152.us-west-2.compute.amazonaws.com/) is available. 
+This tutorial enables you to quickly get started in your development efforts to create a PHP web application with the Optimizely X PHP SDK.
 
 The Optimizely PHP SDK provides core components to run full stack experiments anywhere in the code. The SDK handles aspects like: 
 
@@ -321,6 +321,6 @@ Display the property information with the UI layout using `echo()`.
 
 ## Reference
 
-* View the Optimizely PHP Getting Started Guide [here](http://developers.optimizely.com/server/getting-started/index.html?language=php)
+* View the Optimizely PHP Getting Started Guide [here](http://developers.optimizely.com/server/getting-started/index.html?language=php).
 * View the Optimizely PHP reference documentation [here](http://developers.optimizely.com/server/reference/index.html?language=php).
-* Download the Optimizely PHP SDK [here](https://github.com/optimizely/php-sdk)
+* Download the Optimizely PHP SDK [here](https://github.com/optimizely/php-sdk).
