@@ -123,23 +123,14 @@ if(isset($_POST['user_id'])){
 ?>
 ```
 
-Create the layout for the catalog.
+Create the layout for the catalog and initialize the application using `getItems`.
 
 ```php
 <!doctype html>
 <html lang="en" class="height--1-1">
   <head>
      <title>Attic & Button</title>
-     <!-- Latest compiled and minified OUI stylesheet -->
-     <link rel="stylesheet" href="https://d2uaiq63sgqwfs.cloudfront.net/8.0.0/oui.css">
-     <style>
-       table, th, td, div {
-         padding: 5px;
-       }
-       button {
-         padding: 8px 15px;
-       }
-     </style>
+     ...
   </head>
   <body class="background--grey height--1-1">
     <div class="flex flex-justified--center soft-quad--ends soft-double--bottom background--faint">
@@ -328,7 +319,6 @@ Display the property information with the UI layout using `echo()`.
       $item_price = $items[$i][3];
       $item_url = $items[$i][4];
 
-      echo "<td class='background--white text--center font-family--tahoma'>";
       echo "<h2><b> $item_name</b></h2>";
       echo " in $item_color <br>";
       echo "<b>$item_category, $item_price </b>";
@@ -336,13 +326,7 @@ Display the property information with the UI layout using `echo()`.
       echo "<form action='process.php' method='post'> 
            <input type='text' name='track' value='$user_id' hidden='true'>";
       echo "<button type='submit' style='background: #cb1b2c; color: #ffffff; border: none'> BUY NOW</button>";
-      echo "</form>";
-      echo "</td>";
-      echo "<td width='10'></td>";
-      echo "<p></p>";
-      // every 3 rows
-      if (($i+1) % 3 == 0) {
-      echo "</tr>";
+      ...
       }
     }    
   }
