@@ -132,18 +132,13 @@ Create the layout for the catalog and initialize the application using `getItems
      <title>Attic & Button</title>
      ...
   </head>
-  <body class="background--grey height--1-1">
-    <div class="flex flex-justified--center soft-quad--ends soft-double--bottom background--faint">
-      <div class="max-width--large text--center text-align--center align--center">
-        <img src="images/logo.png" class="width--200 text--center align--middle" align="middle" style="margin-bottom:35px">
-        <center><h2> Welcome to Attic & Button!</h2></center>
-        <div align="center">
+  <body>
+    ...     
           <form action="index.php" method="post">
               <b>Simulate a visitor:</b> <input placeholder="Joe" type="text" name="user_id" value="<?php $user_id ?>">
               <input type="submit" value="Shop">
           </form>
-        </div>
-        </br>
+          ...
           <table style="cellspacing: 10">
             <tr>
             <?php
@@ -154,8 +149,7 @@ Create the layout for the catalog and initialize the application using `getItems
             ?>
             <tr height='10'></tr>
           </table>
-      </div>
-    </div>
+    ...
   </body>
 </html>
 ```
