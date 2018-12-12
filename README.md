@@ -1,6 +1,6 @@
 # Optimizely PHP Tutorial
 
-This tutorial enables you to quickly get started in your development efforts to create a PHP web application with the Optimizely X PHP SDK.
+This tutorial enables you to quickly get started in your development efforts to create a PHP web application with the Optimizely X PHP SDK. A [live demo](http://ec2-52-36-13-152.us-west-2.compute.amazonaws.com/) is available. 
 
 The Optimizely PHP SDK provides core components to run full stack experiments anywhere in the code. The SDK handles aspects like: 
 
@@ -12,8 +12,8 @@ The Optimizely PHP SDK provides core components to run full stack experiments an
 
 The Test App simulates an online retailer testing the effects of sorting products by price vs category. Run the app locally to mimic bucketing website visitors by entering unique user IDs into the search bar. For example:
 
-* In the text input box, type the name “Joe” as the user ID. This simulate a unique visitor. 
-* Select a specific variation for "Joe". The variation that is given to "Joe" will be deterministic. Meaning, as long as the experiment conditions remain the same, "Joe" will always get the same variation.
+* In the text input box, type the name “Joe” as the user ID. This simulates a unique visitor. 
+* Select a specific variation for "Joe". The variation that is given to "Joe" will be deterministic, meaning that as long as the experiment conditions remain the same, "Joe" will always get the same variation.
 
 
 The Test App works as follows:
@@ -110,6 +110,10 @@ Connect the required dependency for the application using `include`.
 ```php
 <?php
 
+// PHP SDK Demo App
+// Copyright 2017 Optimizely. Licensed under the Apache License
+// View the documentation: http://bit.ly/2rfsbxt
+
 include ('process.php');
 
 if(isset($_POST['user_id'])){
@@ -119,23 +123,36 @@ if(isset($_POST['user_id'])){
 ?>
 ```
 
-Create the layout for the catalog and initialize the application using `getItems`.
+Create the layout for the catalog.
 
 ```php
 <!doctype html>
 <html lang="en" class="height--1-1">
   <head>
      <title>Attic & Button</title>
-     ...
+     <!-- Latest compiled and minified OUI stylesheet -->
+     <link rel="stylesheet" href="https://d2uaiq63sgqwfs.cloudfront.net/8.0.0/oui.css">
+     <style>
+       table, th, td, div {
+         padding: 5px;
+       }
+       button {
+         padding: 8px 15px;
+       }
+     </style>
   </head>
-  <body>
-    ...     
+  <body class="background--grey height--1-1">
+    <div class="flex flex-justified--center soft-quad--ends soft-double--bottom background--faint">
+      <div class="max-width--large text--center text-align--center align--center">
+        <img src="images/logo.png" class="width--200 text--center align--middle" align="middle" style="margin-bottom:35px">
+        <center><h2> Welcome to Attic & Button!</h2></center>
+        <div align="center">
           <form action="index.php" method="post">
-              <b>Simulate a visitor:</b> 
-              <input placeholder="Joe" type="text" name="user_id" value="<?php $user_id ?>">
+              <b>Simulate a visitor:</b> <input placeholder="Joe" type="text" name="user_id" value="<?php $user_id ?>">
               <input type="submit" value="Shop">
           </form>
-          ...
+        </div>
+        </br>
           <table style="cellspacing: 10">
             <tr>
             <?php
@@ -146,7 +163,8 @@ Create the layout for the catalog and initialize the application using `getItems
             ?>
             <tr height='10'></tr>
           </table>
-    ...
+      </div>
+    </div>
   </body>
 </html>
 ```
@@ -159,6 +177,10 @@ Connect the required dependencies for the application, including the Optimizely 
 
 ```php
 <?php 
+
+// PHP SDK Demo App
+// Copyright 2017 Optimizely. Licensed under the Apache License
+// View the documentation: http://bit.ly/2rfsbxt
 
   require_once 'vendor/autoload.php';
   use Optimizely\Optimizely;
@@ -306,6 +328,7 @@ Display the property information with the UI layout using `echo()`.
       $item_price = $items[$i][3];
       $item_url = $items[$i][4];
 
+      echo "<td class='background--white text--center font-family--tahoma'>";
       echo "<h2><b> $item_name</b></h2>";
       echo " in $item_color <br>";
       echo "<b>$item_category, $item_price </b>";
@@ -313,7 +336,13 @@ Display the property information with the UI layout using `echo()`.
       echo "<form action='process.php' method='post'> 
            <input type='text' name='track' value='$user_id' hidden='true'>";
       echo "<button type='submit' style='background: #cb1b2c; color: #ffffff; border: none'> BUY NOW</button>";
-      ...
+      echo "</form>";
+      echo "</td>";
+      echo "<td width='10'></td>";
+      echo "<p></p>";
+      // every 3 rows
+      if (($i+1) % 3 == 0) {
+      echo "</tr>";
       }
     }    
   }
@@ -321,6 +350,6 @@ Display the property information with the UI layout using `echo()`.
 
 ## Reference
 
-* View the Optimizely PHP Getting Started Guide [here](http://developers.optimizely.com/server/getting-started/index.html?language=php).
+* View the Optimizely PHP Getting Started Guide [here](http://developers.optimizely.com/server/getting-started/index.html?language=php)
 * View the Optimizely PHP reference documentation [here](http://developers.optimizely.com/server/reference/index.html?language=php).
-* Download the Optimizely PHP SDK [here](https://github.com/optimizely/php-sdk).
+* Download the Optimizely PHP SDK [here](https://github.com/optimizely/php-sdk)
